@@ -4,7 +4,7 @@ export default function CareersPage() {
  //data fetching here
   return (
     <main>
-      <Jobs />
+      <Jobs view="list" />
     </main>
   );
 }

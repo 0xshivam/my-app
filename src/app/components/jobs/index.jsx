@@ -1,11 +1,16 @@
+import cn from 'clsx'
 import styles from './jobs.module.css'
 
-export default function Jobs() {
+export default function Jobs({ view }) {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
+      {true && (
         <h2 className={styles.title}>Open Roles</h2>
-        <p className={styles.description}>
+      )}
+        <p className={cn(
+            view === 'grid' ? styles.description : styles.description2
+          )}>
           Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
           ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
           Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 

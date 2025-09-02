@@ -1,12 +1,14 @@
+import styles from './jobs.module.css'
+
 export default function Jobs() {
   return (
-    <section>
-      <div>
-        <h2>Open Roles</h2>
-        <p>
+    <section className={styles.container}>
+      <div className={styles.header}>
+        <h2 className={styles.title}>Open Roles</h2>
+        <p className={styles.description}>
           Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
           ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
-          dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+          
         </p>
       </div>
       

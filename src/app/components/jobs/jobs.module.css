@@ -1,8 +1,10 @@
 .container {
-    
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding: 40px 16px;
     font-family: sans-serif;
 }
 
@@ -10,26 +12,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .title {
     font-size: 72px;
     font-weight: lighter;
-    margin-bottom: 45px;
-    color: #000000;
+    margin: 0;
+    font-family: 'Shivam';
+    /* margin-bottom: 45px; */
+    /* color: #000000; */
 }
 
 .description {
     color: #666;
     line-height: 1;
-    max-width: 400px;
+    max-width: 414px;
     margin-bottom: 25px;
 }
 
+.tableWrapper {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+
 .tableContainer {
-    
-    overflow: hidden;
+    position: relative;
+    /* width: 500px; */
+    overflow: auto;
+    /* overflow: hidden; */
 }
 
 .headerRow {
@@ -46,6 +58,8 @@
     color: #666;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 .jobsList {
@@ -61,18 +75,32 @@
     grid-template-columns: 2fr 1fr 1fr 2fr;
     padding: 0;
     text-decoration: none;
-    color: #000;
-    transition: background-color 0.2s ease;
+    color: black;
+    /* transition: background-color 2s ease; */
+
+    /* you can do it this way */
+    transition: background-color 0.2s ease, color 0.2s ease; 
+
+    /* or this way */
+    /* transition-property: background-color, color; */
+    /* transition-duration: 0.2s; */
+    /* transition-timing-function: ease; */
 }
 
 .jobLink:hover {
+    /* If you are going to change both background-color and color on hover */
+    /* you should specify both, specify all the properties that need to be changed */
     background-color: black;
     color: white;
 }
 
 .jobCell {
-    padding: 16px 20px;
+    /* height: 100px; */
+    border: 1px solid red;
+    /* padding: 16px 20px; */
     font-size: 14px;
     display: flex;
-    align-items: center;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }

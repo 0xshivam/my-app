@@ -8,11 +8,35 @@ export default function Jobs() {
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
           ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
+          Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem 
+          ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum 
           
         </p>
       </div>
       
-      
+      <div className={styles.tableWrapper}>
       <div className={styles.tableContainer}>
         {/* Header row */}
         <div className={styles.headerRow}>
@@ -105,6 +129,7 @@ export default function Jobs() {
             </a>
           </li>
         </ul>
+      </div>
       </div>
     </section>
   );

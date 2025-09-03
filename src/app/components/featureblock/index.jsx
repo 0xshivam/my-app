@@ -3,76 +3,144 @@ import Image from "next/image";
 
 export default function Feature() {
   return (
-    <>
-      <section className={styles.assetSection}>
-        <div className={styles.imageContainer}>
-          <Image
-            src="/asset.png"
-            alt="World Supercomputer visualization"
-            width={586}
-            height={586}
-            className={styles.assetImage}
-          />
-        </div>
-      </section>
+    <section>
+      {/* 1️⃣ Section image */}
+      <div>
+        <Image
+          src="/asset.png"
+          alt="World Supercomputer visualization"
+          width={586}
+          height={586}
+          className={styles.assetImage}
+        />
+      </div>
 
-      <div className={styles.mainContainer}>
-        <header>
-          <h2>
-            A World <br />
-            <span>Supercomputer</span>
-          </h2>
-          <h3>/ The Nexus Layer 1</h3>
+      {/* 2️⃣ Most outer wrapper */}
+      <div>
+        {/* Header and button container */}
+        <div>
+          <div>
+            <h2>
+              A World <br /> Supercomputer
+            </h2>
+            <h3>/ THE NEXUS LAYER 1</h3>
+          </div>
+
           <Image
             src="/circle.png"
-            alt="circle with the cross"
+            alt="circle with a cross"
             width={16}
             height={16}
             className={styles.circleImage}
           />
+        </div>
 
-          <div>
-            <p>
-              Nexus is a new kind of Layer 1 blockchain — purpose-built for the
-              AI era. It’s verifiable. Exponentially scalable. Built for agents.
-              And open to anyone.
-            </p>
-          </div>
+        {/* Description + buttons */}
+        <div>
+          <p>
+            Nexus is a new kind of Layer 1 blockchain — purpose-built for the AI
+            era. It&apos;s verifiable. Exponentially scalable. Built for agents.
+            And open to anyone.
+          </p>
           <div>
             <button>
-              <span>Button Name</span>
-              <span>→</span>
+              Button Name <span>→</span>
             </button>
             <button>
-              <span>Button Name</span>
-              <span>→</span>
+              Button Name <span>→</span>
             </button>
           </div>
-        </header>
-        <main>
-          <div>
-            <div>
-              <h4>Horizontally + vertically scalable</h4>
-            </div>
-            <div>
-              <p>
-                The Nexus Layer 1 is EVM-compatible and optimized for verifiable
-                compute. Use Rust or Solidity to deploy applications that invoke
-                zk-proven computation or power agentic services.
-              </p>
+        </div>
+
+        {/* List Section */}
+        <div>
+          <ul>
+            <li>
               <div>
+                <p>Horizontally + vertically scalable</p>
+              </div>
+              <div>
+                <p>
+                  The Nexus Layer 1 is EVM-compatible and optimized for
+                  verifiable compute. Use Rust or Solidity to deploy
+                  applications that invoke zk-proven computation or power
+                  agentic services.
+                </p>
                 <Image
                   src="/discord.png"
-                  alt="discord icon"
+                  alt="circle with a cross"
                   width={18}
                   height={18}
-                  // className={styles.discordImage}
+                  className={styles.discordImage}
                 />
               </div>
-            </div>
-          </div>
-        </main>
+            </li>
+            <li>
+              {" "}
+              <div>
+                <p>Horizontally + vertically scalable</p>
+              </div>
+              <div>
+                <p>
+                  The Nexus Layer 1 is EVM-compatible and optimized for
+                  verifiable compute. Use Rust or Solidity to deploy
+                  applications that invoke zk-proven computation or power
+                  agentic services.
+                </p>
+                <Image
+                  src="/discord.png"
+                  alt="circle with a cross"
+                  width={18}
+                  height={18}
+                  className={styles.discordImage}
+                />
+              </div>
+            </li>
+            <li>
+              {" "}
+              <div>
+                <p>Horizontally + vertically scalable</p>
+              </div>
+              <div>
+                <p>
+                  The Nexus Layer 1 is EVM-compatible and optimized for
+                  verifiable compute. Use Rust or Solidity to deploy
+                  applications that invoke zk-proven computation or power
+                  agentic services.
+                </p>
+                <Image
+                  src="/discord.png"
+                  alt="circle with a cross"
+                  width={18}
+                  height={18}
+                  className={styles.discordImage}
+                />
+              </div>
+            </li>
+            <li>
+              {" "}
+              <div>
+                <p>Horizontally + vertically scalable</p>
+              </div>
+              <div>
+                <p>
+                  The Nexus Layer 1 is EVM-compatible and optimized for
+                  verifiable compute. Use Rust or Solidity to deploy
+                  applications that invoke zk-proven computation or power
+                  agentic services.
+                </p>
+                <Image
+                  src="/discord.png"
+                  alt="circle with a cross"
+                  width={18}
+                  height={18}
+                  className={styles.discordImage}
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </>
+    </section>
   );
 }

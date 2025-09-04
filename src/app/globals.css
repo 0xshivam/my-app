@@ -31,3 +31,6 @@ body {
   src: url("/fonts/font.ttf") format("truetype");
 } */
 
+*{
+      box-sizing: border-box;
+}

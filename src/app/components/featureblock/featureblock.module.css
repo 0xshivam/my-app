@@ -149,7 +149,7 @@
 }
 
 
-
+/* 
 .featureList{
     display: flex;
     flex-direction: column;
@@ -185,5 +185,42 @@
     font-style: ExtraLight;
     font-size: 14px;
     letter-spacing: 3%;
+    color: grey;
+} */
+
+
+.featureList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 16px 103px;
+    /* row-gap column-gap */
+    margin-top: 184px;
+    padding-left: 0;
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Space between title and details */
+    padding: 25px 0;
+}
+
+.featureTitle {
+    width: 155px;
+    flex-shrink: 0;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.featureDetails {
+    font-family: sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 0.03em;
     color: grey;
 }

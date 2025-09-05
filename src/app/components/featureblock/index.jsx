@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./featureblock.module.css";
 import Image from "next/image";
 
@@ -56,7 +57,8 @@ export default function Feature() {
             <p className={styles.description}>
               Nexus is a new kind of Layer 1 blockchain — purpose-built for the
               AI era. It&apos;s verifiable. Exponentially scalable. Built for
-              agents. And open to anyone.
+              agents. And <br />
+              open to anyone.
             </p>
             <div className={styles.buttonGroup}>
               <button className={styles.primaryBtn}>

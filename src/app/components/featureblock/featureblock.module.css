@@ -241,7 +241,7 @@
     }
 
 .leftImageWrapper {
-        position: static;
+              position: static;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -299,9 +299,8 @@
     width: auto;
     font-size: 14px;
 }
-
 .featureDetails {
-    font-size: 14px;
+font-size: 14px;
 }
 }
 

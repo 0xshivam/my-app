@@ -127,176 +127,114 @@
 
 }
 
-/* Added these two new classes */
+
+.featureList {
+    margin-top: 184px;
+    padding-left: 0;
+    list-style: none;
+}
+
+/* FLEX LAYOUT */
 .flexLayout {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-top: 184px;
-    padding-left: 0;
 }
 
-.gridLayout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 103px;
-    margin-top: 184px;
-    padding-left: 0;
-}
-/* this is flex css  */
-/* 
-.featureList{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 184px;
-    padding-left: 0;
-}
-
-.featureItem{
+.flexLayout .featureItem {
     display: flex;
     flex-direction: row;
     gap: 103px;
     padding: 25px 0;
-    
-    
 }
 
-.featureTitle{
-    width: 155px;
-        flex-shrink: 0;
- font-weight: 400;
- font-size: 14px;
- font-family: sans-serif;
- font-style: regular;
-   
-
- 
+/* GRID LAYOUT */
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 103px;
+    /* row gap 40px, column gap 103px */
 }
 
-.featureDetails{
-    font-family: sans-serif;
-    font-weight: 200;
-    font-style: ExtraLight;
-    font-size: 14px;
-    letter-spacing: 3%;
-    color: grey;
-} */
-
- /* here starts grid css */
-.featureList {
-        margin-top: 184px;
-        padding-left: 0;
-        list-style: none;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 103px;
-    margin-top: 184px;
-    padding-left: 0; */
-}
-
-.featureItem {
+.gridLayout .featureItem {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 25px 0;
 }
 
+/* Shared styles for featureItem content */
 .featureTitle {
     width: 155px;
     flex-shrink: 0;
     font-weight: 400;
     font-size: 14px;
     font-family: sans-serif;
-    font-style: normal;
 }
 
 .featureDetails {
     font-family: sans-serif;
     font-weight: 200;
-    font-style: normal;
     font-size: 14px;
     letter-spacing: 0.03em;
     color: grey;
 }
 
-
-
-/* HERE STARTS THE RESPONSIVE LAYOUT FOR MOBILE */
-
+/* RESPONSIVE FOR MOBILE */
 @media (max-width: 800px) {
-.featureSection {
+    .featureSection {
         flex-direction: column;
         padding: 24px 16px;
-        gap: 32px;    
+        gap: 32px;
     }
 
+    .leftImageWrapper {
+        position: static;
+        margin-bottom: 32px;
+        width: 100%;
+        aspect-ratio: 343 / 347;
+    }
 
-.leftImageWrapper {
-              position: static;
-              margin-bottom: 32px;
-              width: 100%;
-              background-color: red;
-              aspect-ratio: 343 / 347;
-             
+    .assetImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
+    .rightContent {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    /* On mobile, always fallback to flex stacked layout */
+    .featureList {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 48px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .featureItem {
+        padding: 16px 0;
+        gap: 12px;
+    }
+
+    .featureTitle {
+        width: auto;
+        font-size: 14px;
+    }
+
+    .featureDetails {
+        font-size: 14px;
+    }
 }
 
-.assetImage {
-            width: 100%;
-            height:100%;
-            object-fit: cover;
-        
-}
 
 
-.rightContent {
-    width: 100%;
-}
-
-
-.heading {
-    font-size: 32px;
-    text-align: left;
-}
-
-
-.buttonGroup {
-     flex-direction: column;
-     gap: 8px;
-     margin-top: 24px;
-     height: 48px;
-
-}
-
-.description {
-    width: 100%;
-    font-size: 14px;
-        
-}
-
-.featureList {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 48px;
-    margin-left: 16px;
-    margin-right: 16px;
-}
-
-.featureItem {
-    padding: 16px 0;
-    gap: 12px;
-}
-
-.featureTitle {
-    width: auto;
-    font-size: 14px;
-}
-
-.featureDetails {
-    font-size: 14px;
-}
-
-}
 

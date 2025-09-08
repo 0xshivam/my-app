@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import cn from "clsx";
 import styles from "./featureblock.module.css";
 import Image from "next/image";
 
@@ -16,7 +16,9 @@ function Svg() {
     </svg>
   );
 }
+
 export default function Feature() {
+  const viewType = "flex";
   return (
     <section className={styles.featureSection}>
       {/* Left Section - Image */}
@@ -77,7 +79,12 @@ export default function Feature() {
           </div>
         </div>
         {/* Features List */}
-        <ul className={styles.featureList}>
+        <ul
+          className={cn(
+            styles.featureList,
+            viewType === "flex" ? styles.flexLayout : styles.gridLayout
+          )}
+        >
           {[1, 2, 3, 4].map((item, index) => (
             <li key={index} className={styles.featureItem}>
               <p className={styles.featureTitle}>

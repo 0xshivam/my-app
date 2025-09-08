@@ -66,13 +66,23 @@ export default function Feature() {
               <button className={styles.primaryBtn}>
                 Button Name
                 <span className={styles.arrowone}>
-                  <Svg />
+                  <span className={cn(styles.arrow, styles.arrow1)}>
+                    <Svg />
+                  </span>
+                  <span className={cn(styles.arrow, styles.arrow2)}>
+                    <Svg />
+                  </span>
                 </span>
               </button>
               <button className={styles.secondaryBtn}>
-                Button Name{" "}
+                Button Name
                 <span className={styles.arrowtwo}>
-                  <Svg />
+                  <span className={cn(styles.arrow, styles.arrow1)}>
+                    <Svg />
+                  </span>
+                  <span className={cn(styles.arrow, styles.arrow2)}>
+                    <Svg />
+                  </span>
                 </span>
               </button>
             </div>
@@ -86,7 +96,15 @@ export default function Feature() {
           )}
         >
           {[1, 2, 3, 4].map((item, index) => (
-            <li key={index} className={styles.featureItem}>
+            <li
+              key={index}
+              className={cn(
+                styles.featureItem,
+                viewType === "flex"
+                  ? styles.featureItemflex
+                  : styles.featureItemgrid
+              )}
+            >
               <p className={styles.featureTitle}>
                 Horizontally + vertically scalable
               </p>

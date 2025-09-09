@@ -2,8 +2,6 @@
     overflow: hidden;
     box-sizing: border-box;
     width: 100%;
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
     padding: 40px 16px;
     font-family: sans-serif;
 }
@@ -12,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 40px; */
 }
 
 .title {
@@ -20,20 +17,18 @@
     font-weight: lighter;
     margin: 0;
     font-family: 'Shivam';
-    /* margin-bottom: 45px; */
-    /* color: #000000; */
 }
 
 .description {
     color: #666;
-    line-height: 1;
+    line-height: 1.4;
     max-width: 414px;
     margin-bottom: 25px;
 }
 
 .description2 {
     color: #ff0000;
-    line-height: 1;
+    line-height: 1.4;
     max-width: 714px;
     margin-bottom: 25px;
 }
@@ -41,32 +36,32 @@
 .tableWrapper {
     position: relative;
     width: 100%;
-    overflow: auto;
+    overflow-x: auto;
+    border-top: 1px solid #e5e5e5;
 }
 
 .tableContainer {
     position: relative;
-    /* width: 500px; */
     overflow: auto;
-    /* overflow: hidden; */
+    min-width: 800px;
+    /* for horizontal scroll if needed */
 }
 
 .headerRow {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 2fr;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .headerCell {
     padding: 16px 20px;
     font-size: 12px;
     font-weight: 600;
-    color: #666;
+    color: #999;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    /* display: flex; */
-    /* justify-content: center; */
+    letter-spacing: 0.8px;
 }
 
 .jobsList {
@@ -75,39 +70,51 @@
     padding: 0;
 }
 
-
-
-.jobLink {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    padding: 0;
-    text-decoration: none;
-    color: black;
-    /* transition: background-color 2s ease; */
-
-    /* you can do it this way */
-    transition: background-color 0.2s ease, color 0.2s ease; 
-
-    /* or this way */
-    /* transition-property: background-color, color; */
-    /* transition-duration: 0.2s; */
-    /* transition-timing-function: ease; */
+/* Updated jobItem for the animation*/
+.jobItem {
+    position: relative;
+    overflow: hidden;
 }
 
-.jobLink:hover {
-    /* If you are going to change both background-color and color on hover */
-    /* you should specify both, specify all the properties that need to be changed */
-    background-color: black;
-    color: white;
+.jobLink {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #f0f0f0;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+
+/* Animated background using ::before pseudo-element */
+.jobItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Trigger animation on hover */
+.jobItem:hover::before {
+    transform: translateY(0);
+}
+
+.jobItem:hover .jobLink,
+.jobItem:hover .jobCell {
+    color: #fff;
 }
 
 .jobCell {
-    /* height: 100px; */
-    border: 1px solid red;
-    /* padding: 16px 20px; */
     font-size: 14px;
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    align-items: center;
 }

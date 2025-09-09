@@ -62,6 +62,14 @@
     color: #999;
     text-transform: uppercase;
     letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+}
+
+/* Right align the last header cell (LOCATION) */
+.headerCell:last-child {
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .jobsList {
@@ -70,7 +78,7 @@
     padding: 0;
 }
 
-/* Updated jobItem for the animation*/
+/* Updated jobItem with animation setup */
 .jobItem {
     position: relative;
     overflow: hidden;
@@ -88,6 +96,11 @@
     transition: color 0.3s ease;
 }
 
+/* Remove old hover effect - replaced with animation below */
+/* .jobLink:hover {
+    background-color: #000;
+    color: #fff;
+} */
 
 /* Animated background using ::before pseudo-element */
 .jobItem::before {
@@ -117,4 +130,20 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Right align the last column (Location) */
+.jobCell:last-child {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/* Subtle transform effect on hover */
+.jobItem:hover .jobCell:first-child {
+    transform: translateX(5px);
+}
+
+.jobItem:hover .jobCell:last-child {
+    transform: translateX(-5px);
 }

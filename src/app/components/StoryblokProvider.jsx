@@ -1,11 +1,11 @@
-"use client";
+// "use client";
 
-import { getStoryblokApi } from "@/lib/storyblok";
+// import { getStoryblokApi } from "@/lib/storyblok";
 
-export default function StoryblokProvider({ children }) {
-  const storyblokApi = getStoryblokApi();
+// export default function StoryblokProvider({ children }) {
+//   const storyblokApi = getStoryblokApi();
 
-  console.log("Storyblok API initialized:", storyblokApi);
+//   console.log("Storyblok API initialized:", storyblokApi);
 
-  return children;
-}
+//   return children;
+// }

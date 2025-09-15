@@ -1,10 +1,12 @@
+import storyblokApi from '@/lib/storyblok';
 import Feature from '../components/featureblock';
 
-export default function featureBlock() {
- //data fetching here
+export default async function featureBlock() {
+  const { data } = await storyblokApi.get("cdn/stories/feature", {});
+  
   return (
     <main>
-      <Feature />
+      <Feature data={data.story.content} />
     </main>
   );
 }

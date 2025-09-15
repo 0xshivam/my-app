@@ -17,7 +17,8 @@ function Svg() {
   );
 }
 
-export default function Feature() {
+export default function Feature({ data }) {
+  console.log(data);
   const viewType = "flex";
   return (
     <section className={styles.featureSection}>
@@ -39,7 +40,7 @@ export default function Feature() {
           <div>
             <h2 className={styles.heading}>
               A World <br />
-              <span className={styles.supercomputer}>Supercomputer</span>
+              <span className={styles.supercomputer}>{data?.heading}</span>
             </h2>
             <p className={styles.subHeading}>/ THE NEXUS LAYER 1</p>
           </div>

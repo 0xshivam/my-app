@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env HTTPS=true SSL_CRT_FILE=cert/localhost+2.pem SSL_KEY_FILE=cert/localhost+2-key.pem next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "cross-env": "^10.0.0",
     "tailwindcss": "^4"
   }
 }

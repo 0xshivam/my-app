@@ -1,12 +1,12 @@
-import { apiPlugin, storyblokInit, getStoryblokApi as getApi } from "@storyblok/react/rsc";
+// lib/storyblok.js
+import StoryblokClient from "storyblok-js-client";
 
-storyblokInit({
-  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
-  use: [apiPlugin],
-  apiOptions: {
-    region: "eu", // Change region only if your space is not in EU
+const storyblokApi = new StoryblokClient({
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
+  cache: {
+    clear: "auto",
+    type: "memory",
   },
 });
 
-// Proper function to return API instance
-export const getStoryblokApi = () => getApi();
+export default storyblokApi;

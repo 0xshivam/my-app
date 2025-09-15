@@ -1,9 +1,17 @@
-import Image from "next/image";
+import { getStoryblokApi } from '@/lib/storyblok';
+import { StoryblokStory } from '@storyblok/react/rsc';
 
-export default function Home() {
-  return (
-    <main className="flex items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold">Hello world!</h1>
-    </main>
-  );
+export default async function Home() {
+const { data } = await fetchData();
+
+return (
+	<div className="page">
+		<StoryblokStory story={data.story} />
+	</div>
+);
+}
+
+export async function fetchData() {
+const storyblokApi = getStoryblokApi();
+return await storyblokApi.get(`cdn/stories/home`, { version: 'draft' });
 }

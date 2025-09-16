@@ -18,15 +18,15 @@ function Svg() {
 }
 
 export default function Feature({ data }) {
-  const viewType = "flex";
+  const viewType = "grid";
 
   return (
     <section className={styles.featureSection}>
       {/* Left Section - Image */}
       <picture className={styles.leftImageWrapper}>
         <Image
-          src={data?.image?.filename || "/asset.png"}
-          alt={data?.image?.alt || "Feature image"}
+          src={data?.image?.filename || ""}
+          alt={data?.image?.alt || "Feature image picture"}
           width={586}
           height={586}
           className={styles.assetImage}
@@ -57,66 +57,76 @@ export default function Feature({ data }) {
           </picture>
 
           {/* Description + Buttons */}
-          <div className={styles.descriptionWrapper}>
-            <p className={styles.description}>{data?.description}</p>
-            <div className={styles.buttonGroup}>
-              {data?.buttons?.map((btn, index) => (
-                <button
-                  key={btn._uid}
-                  className={
-                    index === 0 ? styles.primaryBtn : styles.secondaryBtn
-                  } // first button primary, second secondary
-                >
-                  {btn.label}
-                  <span
-                    className={index === 0 ? styles.arrowone : styles.arrowtwo}
-                  >
-                    <span className={cn(styles.arrow, styles.arrow1)}>
-                      <Svg />
-                    </span>
-                    <span className={cn(styles.arrow, styles.arrow2)}>
-                      <Svg />
-                    </span>
-                  </span>
-                </button>
-              ))}
+          {(data?.description || data?.buttons?.length !== 0) && (
+            <div className={styles.descriptionWrapper}>
+              {data.description && (
+                <p className={styles.description}>{data?.description}</p>
+              )}
+              {data?.buttons?.length !== 0 && (
+                <div className={styles.buttonGroup}>
+                  {data?.buttons?.map((btn, index) => (
+                    <button
+                      key={btn?._uid}
+                      className={
+                        index === 0 ? styles.primaryBtn : styles.secondaryBtn
+                      } // first button primary, second secondary
+                    >
+                      {btn?.label}
+                      <span
+                        className={
+                          index === 0 ? styles.arrowone : styles.arrowtwo
+                        }
+                      >
+                        <span className={cn(styles.arrow, styles.arrow1)}>
+                          <Svg />
+                        </span>
+                        <span className={cn(styles.arrow, styles.arrow2)}>
+                          <Svg />
+                        </span>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
+          )}
         </div>
 
         {/* Features List */}
-        <ul
-          className={cn(
-            styles.featureList,
-            viewType === "flex" ? styles.flexLayout : styles.gridLayout
-          )}
-        >
-          {data?.list_items?.map((item) => (
-            <li
-              key={item._uid}
-              className={cn(
-                styles.featureItem,
-                viewType === "flex"
-                  ? styles.featureItemflex
-                  : styles.featureItemgrid
-              )}
-            >
-              <p className={styles.featureTitle}>{item.title}</p>
-              <div className={styles.featureDetails}>
-                <p>{item.listdescription}</p>
-                {item.icon?.filename && (
-                  <Image
-                    src={item.icon.filename}
-                    alt={item.title}
-                    width={18}
-                    height={18}
-                    className={styles.discordImage}
-                  />
+        {data?.list_items?.length > 0 && (
+          <ul
+            className={cn(
+              styles.featureList,
+              viewType === "flex" ? styles.flexLayout : styles.gridLayout
+            )}
+          >
+            {data.list_items.map((item) => (
+              <li
+                key={item?._uid || item?.title}
+                className={cn(
+                  styles.featureItem,
+                  viewType === "flex"
+                    ? styles.featureItemflex
+                    : styles.featureItemgrid
                 )}
-              </div>
-            </li>
-          ))}
-        </ul>
+              >
+                <p className={styles.featureTitle}>{item?.title}</p>
+                <div className={styles.featureDetails}>
+                  <p>{item?.listdescription}</p>
+                  {item.icon?.filename && (
+                    <Image
+                      src={item.icon.filename}
+                      alt={item?.title}
+                      width={18}
+                      height={18}
+                      className={styles.discordImage}
+                    />
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );

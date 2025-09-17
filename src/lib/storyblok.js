@@ -1,15 +1,11 @@
-import StoryblokClient from "storyblok-js-client";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
-const isDev = process.env.NODE_ENV !== "production";
-
-const storyblokApi = new StoryblokClient({
-  accessToken: isDev
-    ? process.env.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN
-    : process.env.NEXT_PUBLIC_STORYBLOK_PUBLIC_TOKEN,
-  cache: {
-    clear: "auto",
-    type: "memory",
-  },
-});
-
-export default storyblokApi;
+export function initializeStoryblok() {
+  storyblokInit({
+    accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
+    use: [apiPlugin], // Required for API calls
+    apiOptions: {
+      region: "eu", // Change only if your space is in the US or AP region
+    },
+  });
+}
